@@ -1,18 +1,15 @@
-print('****welcome to ATM****')
-name=input("What is your name: ")
-no=input("Enter card number: ")
-PIN=int(input('create your PIN (remember! 10000>=PIN>=1000 )'))
-while PIN>=10000 and PIN=="":
-    print("PIN is not valid or you did not enter your PIN!")
-    PIN=int(input('create your PIN (remember! 10000>=PIN>=1000 )'))
-    mobnum="+996505912004"
-A1=int(input("Enter your PIN"))
-while A1!=PIN:
-     print("PIN is not valid or you did not enter your PIN!")
-    PIN=int(input('create your PIN (remember! 10000>=PIN>=1000 )'))
-
-
-    
+print('****Welcome to ATM****')
+name = "Erzhigit"
+no=123456
+mobnum="+996505912004"
+PIN="1221"
+PIN_Entery=int(input("Enter your PIN: "))
+while True:
+    if PIN_Entery!=PIN:
+        print("PIN is not valid or you did not enter your PIN!")
+        PIN=int(input('Enter your PIN (remember! 10000>=PIN>=1000 )'))
+    elif PIN_Entery==PIN:
+        break
 print("Select an options: ")
 print("1. Check Balance ")
 print("2. Cash withdraw ")
@@ -43,4 +40,3 @@ elif A2==4:
     print("Mobile update was successful!")
 elif A2==5:
     print("bye, Thank you for using our ATM bank!")
-

@@ -1,0 +1,69 @@
+name = "Erzhigit"
+Account_num = "123456"
+mobile_num = "+996505912004"
+PIN = "1234"
+balance = 50000.67
+
+def checking():
+    Entry_pin = input("Enter your PIN: ")
+    while Entry_pin != "1234":
+        Entry_pin = input("Invalid PIN! Enter your PIN again: ")
+
+def selection():
+    print("Select an option:")
+    print("1. Check Balance")
+    print("2. Cash withdraw")
+    print("3. Show user Details")
+    print("4. Update Mobile no.")
+    print("5. Exit")
+
+def display_balance():
+    global balance
+    print(f"Your balance is {balance}")
+
+def cash_withdraw():
+    global balance
+    withdraw_amount = float(input("Enter the amount you want to withdraw: "))
+    if withdraw_amount > balance:
+        print("Insufficient amount!")
+    else:
+        print("Collect your cash!")
+        balance -= withdraw_amount
+        print(f"Available balance: {balance}")
+
+def user_details():
+    print("***User Details are:")
+    print(f"-> Account number: {Account_num}")
+    print(f"-> Name: {name}")
+    print(f"-> Balance: {balance}")
+    print(f"-> Mobile No: {mobile_num}")
+
+def new_mobile_num():
+    global mobile_num
+    old_num = input("Enter Old Mobile No: ")
+    while old_num != mobile_num:
+        print("Incorrect old mobile number!")
+        old_num = input("Enter old mobile number again: ")
+    new_mobile_num = input("Enter new mobile number: ")
+    while not new_mobile_num.isdigit():
+        new_mobile_num = input("Invalid new number! Enter new mobile number (AGAIN): ")
+    mobile_num = new_mobile_num
+    print("Mobile update was successful!")
+
+checking()
+
+while True:
+    selection()
+    choice_num = input("Select an option (1, 2, 3, 4, 5): ")
+    if choice_num == "1":
+        display_balance()
+    elif choice_num == "2":
+        cash_withdraw()
+    elif choice_num == "3":
+        user_details()
+    elif choice_num == "4":
+        new_mobile_num()
+    elif choice_num == "5":
+        break
+    else:
+        print("Invalid choice. Please select a valid option.")
